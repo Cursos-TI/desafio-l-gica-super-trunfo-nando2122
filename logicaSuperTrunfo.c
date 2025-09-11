@@ -16,14 +16,14 @@ int main() {
     float pibcartaA = 5.0000000;
     float pibcartaB = 4.9000000;
 
-    char estadocartaA [10] = "R";
-    char estadocartaB [10] = "B";
+    char estadocartaA [40] = "R";
+    char estadocartaB [40] = "B";
 
-    char cidadecartaA [20] = "Rio de Janeiro";
-    char cidadecartaB [20] = "Bahia";
+    char cidadecartaA [60] = "Rio de Janeiro";
+    char cidadecartaB [60] = "Bahia";
 
-    char codigocartaA [20] = "R01";
-    char codigocartaB [20] = "B01";
+    char codigocartaA [40] = "R01";
+    char codigocartaB [40] = "B01";
 
     float densidadecartaA, densidadecartaB;
     float pibcapitacartaA, pibcapitacartaB;
@@ -32,11 +32,15 @@ int main() {
 
     printf("***CartaA e CartaB***\n");
 
-    printf("Digite o Estado da cartaA: %s\n", estadocartaA);
-    printf("Digite o Estado da cartaB: %s\n", estadocartaB);
+    printf("Digite o Estado da carta A: \n");
+    scanf("%c", &estadocartaA);
+    printf("Digite o Estado da carta B: \n");
+    scanf("%c", &estadocartaB);
 
-    printf("Digite a cidade da cartaA: %s\n", cidadecartaA);
-    printf("Digite a cidade da cartaB: %s\n", cidadecartaB);
+    printf("Digite a cidade da cartaA: %s\n");
+    scanf("%s", &cidadecartaA);
+    printf("Digite a cidade da cartaB: %s\n");
+    scanf("%s", &cidadecartaB);
 
     printf("Digite o código da cartaA: %s\n", codigocartaA);
     printf("Digite o código da cartaB: %s\n", codigocartaB);
@@ -115,29 +119,9 @@ int main() {
 
     }
     
-    // Exemplo:
     // printf("Digite o código da cidade: ");
     // scanf("%s", codigo);
-    // 
-    // (Repita para cada propriedade)
 
-    // Comparação de Cartas:
-    // Desenvolva a lógica de comparação entre duas cartas.
-    // Utilize estruturas de decisão como if, if-else para comparar atributos como população, área, PIB, etc.
-
-    // Exemplo:
-    // if (populacaoA > populacaoB) {
-    //     printf("Cidade 1 tem maior população.\n");
-    // } else {
-    //     printf("Cidade 2 tem maior população.\n");
-    // }
-
-    // Exibição dos Resultados:
-    // Após realizar as comparações, exiba os resultados para o usuário.
-    // Certifique-se de que o sistema mostre claramente qual carta venceu e com base em qual atributo.
-
-    // Exemplo:
-    // printf("A cidade vencedora é: %s\n", cidadeVencedora);
 
     return 0;
 }
