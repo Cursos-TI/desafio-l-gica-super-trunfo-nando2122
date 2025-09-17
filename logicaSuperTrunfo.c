@@ -33,9 +33,9 @@ int main() {
     printf("***CartaA e CartaB***\n");
 
     printf("Digite o Estado da carta A: \n");
-    scanf("%c", &estadocartaA);
+    scanf("%s", &estadocartaA);
     printf("Digite o Estado da carta B: \n");
-    scanf("%c", &estadocartaB);
+    scanf("%s", &estadocartaB);
 
     printf("Digite a cidade da cartaA: %s\n");
     scanf("%s", &cidadecartaA);
@@ -43,8 +43,9 @@ int main() {
     scanf("%s", &cidadecartaB);
 
     printf("Digite o código da cartaA: %s\n", codigocartaA);
+    scanf("%s", &codigocartaA);
     printf("Digite o código da cartaB: %s\n", codigocartaB);
-
+    scanf("%s", &codigocartaB);
     printf("***Comparação da Carta A e Carta B***\n");
 
     printf("Digite quantos pontos turísticos tem a cartaA: %d\n", pontoscartaA);
