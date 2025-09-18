@@ -4,26 +4,26 @@ int main() {
    
     int cartaA, cartaB;
 
-    int pontoscartaA = 70;
-    int pontoscartaB = 80;
+    int pontoscartaA;
+    int pontoscartaB;
 
-    int populacaocartaA = 300000;
-    int populacaocartaB = 50000;
+    int populacaocartaA;
+    int populacaocartaB;
 
-    float areacartaA = 5.000000;
-    float areacartaB = 3.900000;
+    float areacartaA;
+    float areacartaB;
 
-    float pibcartaA = 5.0000000;
-    float pibcartaB = 4.9000000;
+    float pibcartaA;
+    float pibcartaB;
 
-    char estadocartaA [40] = "R";
-    char estadocartaB [40] = "B";
+    char estadocartaA [50];
+    char estadocartaB [50];
 
-    char cidadecartaA [60] = "Rio de Janeiro";
-    char cidadecartaB [60] = "Bahia";
+    char cidadecartaA [60];
+    char cidadecartaB [60];
 
-    char codigocartaA [40] = "R01";
-    char codigocartaB [40] = "B01";
+    char codigocartaA [30];
+    char codigocartaB [30];
 
     float densidadecartaA, densidadecartaB;
     float pibcapitacartaA, pibcapitacartaB;
@@ -33,23 +33,20 @@ int main() {
     printf("***CartaA e CartaB***\n");
 
     printf("Digite o Estado da carta A: \n");
-    scanf("%s", &estadocartaA);
     printf("Digite o Estado da carta B: \n");
-    scanf("%s", &estadocartaB);
 
-    printf("Digite a cidade da cartaA: %s\n");
-    scanf("%s", &cidadecartaA);
-    printf("Digite a cidade da cartaB: %s\n");
-    scanf("%s", &cidadecartaB);
+    printf("Digite a cidade da carta A: \n");
+    printf("Digite a cidade da carta B: \n");
 
-    printf("Digite o código da cartaA: %s\n", codigocartaA);
-    scanf("%s", &codigocartaA);
-    printf("Digite o código da cartaB: %s\n", codigocartaB);
-    scanf("%s", &codigocartaB);
+    printf("Digite o código da carta A: \n");
+    printf("Digite o código da carta B: \n");
+
     printf("***Comparação da Carta A e Carta B***\n");
 
-    printf("Digite quantos pontos turísticos tem a cartaA: %d\n", pontoscartaA);
-    printf("Digite quantos pontos turísticos tem a cartaB: %d\n", pontoscartaB);
+    printf("Digite quantos pontos turísticos tem a cartaA: \n");
+    scanf("%d", &pontoscartaA);
+    printf("Digite quantos pontos turísticos tem a cartaB: \n");
+    scanf("%d", &pontoscartaB);
 
     if(pontoscartaA > pontoscartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
@@ -59,8 +56,10 @@ int main() {
 
     }
     
-    printf("Digite o número da população da cartaA: %d mil\n", populacaocartaA);
-    printf("Digite o número da população da cartaB: %d mil\n", populacaocartaB);
+    printf("Digite o número da população da carta A: \n");
+    scanf("%d", &populacaocartaA);
+    printf("Digite o número da população da carta B: \n");
+    scanf("%d", &populacaocartaB);
      
     if(populacaocartaA > populacaocartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
@@ -70,8 +69,10 @@ int main() {
 
     }
 
-    printf("Digite quanto tem de área em km² a cartaA: %f milhões\n", areacartaA);
-    printf("Digite quanto tem de área em km² a cartaB: %f milhões\n", areacartaB);
+    printf("Digite quanto tem de área em km² a carta A: \n");
+    scanf("%f", &areacartaA);
+    printf("Digite quanto tem de área em km² a carta B: \n");
+    scanf("%f", &areacartaB);
 
     if(areacartaA > areacartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
@@ -81,8 +82,10 @@ int main() {
 
     }
 
-    printf("Digite o número do PIB da cartaA: %f milhões\n", pibcartaA);
-    printf("Digite o número do PIB da cartaB: %f milhões\n", pibcartaB);
+    printf("Digite o número do PIB da carta A: \n");
+    scanf("%f", &pibcartaA);
+    printf("Digite o número do PIB da carta B: \n");
+    scanf("%f", &pibcartaB);
     
     if(pibcartaA > pibcartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
@@ -92,16 +95,16 @@ int main() {
 
     }
 
-    densidadecartaA = populacaocartaA / areacartaA;
-    densidadecartaB = populacaocartaB / areacartaB;
+    //densidadecartaA = populacaocartaA / areacartaA;
+    //densidadecartaB = populacaocartaB / areacartaB;
 
-    pibcapitacartaA = populacaocartaA / pibcartaA;
-    pibcapitacartaB = populacaocartaB / pibcartaB;
+    //pibcapitacartaA = populacaocartaA / pibcartaA;
+    //pibcapitacartaB = populacaocartaB / pibcartaB;
 
-    printf("Densidade populacional da cartaA é: %.2f hab/km²\n", densidadecartaA);
-    printf("Densidade populacional da cartaB é: %.2f hab/km²\n", densidadecartaB);
+    printf("Densidade populacional da carta A é: %.2f hab/km²\n", (populacaocartaA / areacartaA));
+    printf("Densidade populacional da carta B é: %.2f hab/km²\n", (populacaocartaB / areacartaB));
 
-    if(densidadecartaA < densidadecartaB){
+    if(densidadecartaA > densidadecartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
 
     }else{
@@ -109,8 +112,8 @@ int main() {
 
     }
 
-    printf("PIB per capita: %.2f reais\n", pibcapitacartaA);
-    printf("PIB per capita: %.2f reais\n", pibcapitacartaB);
+    printf("PIB per capita da carta A: %.2f reais\n", (populacaocartaA / pibcartaA));
+    printf("PIB per capita da carta B: %.2f reais\n", (populacaocartaB / pibcartaB));
 
     if(pibcapitacartaA > pibcapitacartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
@@ -119,10 +122,8 @@ int main() {
         printf("Carta B (Bahia) venceu!\n");
 
     }
-    
-    // printf("Digite o código da cidade: ");
-    // scanf("%s", codigo);
 
 
-    return 0;
+return 0;
+
 }
