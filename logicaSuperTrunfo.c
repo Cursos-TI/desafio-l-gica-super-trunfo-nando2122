@@ -2,98 +2,158 @@
 
 int main() {
    
-    int cartaA, cartaB;
+    int topicos;
+    int comparacao;
+    int cidades;
 
-    int pontoscartaA;
-    int pontoscartaB;
+    int pontoscartaA = 50;
+    int pontoscartaB = 60;
 
-    int populacaocartaA;
-    int populacaocartaB;
+    int populacaocartaA = 300000;
+    int populacaocartaB = 500000;
 
-    float areacartaA;
-    float areacartaB;
+    float areacartaA = 5.000000;
+    float areacartaB = 3.900000;
 
-    float pibcartaA;
-    float pibcartaB;
+    float pibcartaA = 5.0000000;
+    float pibcartaB = 3.9000000;
 
-    char estadocartaA [50];
-    char estadocartaB [50];
+    char estadocartaA [50] = "Rio";
+    char estadocartaB [50] = "Bahia";
 
-    char cidadecartaA [60];
-    char cidadecartaB [60];
+    char cidadecartaA [60] = "Rio de Janeiro";
+    char cidadecartaB [60] = "Bahia";
 
-    char codigocartaA [30];
-    char codigocartaB [30];
+    char codigocartaA [30] = "R01";
+    char codigocartaB [30] = "B01";
 
     float densidadecartaA, densidadecartaB;
     float pibcapitacartaA, pibcapitacartaB;
     
-    float somaA, somaB;
-
-    printf("***CartaA e CartaB***\n");
-
-    printf("Digite o Estado da carta A: \n");
-    printf("Digite o Estado da carta B: \n");
-
-    printf("Digite a cidade da carta A: \n");
-    printf("Digite a cidade da carta B: \n");
-
-    printf("Digite o código da carta A: \n");
-    printf("Digite o código da carta B: \n");
-
     printf("***Comparação da Carta A e Carta B***\n");
 
-    printf("Digite quantos pontos turísticos tem a cartaA: \n");
-    scanf("%d", &pontoscartaA);
-    printf("Digite quantos pontos turísticos tem a cartaB: \n");
-    scanf("%d", &pontoscartaB);
+    printf("1.Comparação.\n");
+    printf("2.Verificar nome das cidades.\n");
+    scanf("%d", &comparacao, &cidades);
 
+    switch (comparacao)
+    {
+    case 1:
+    
+    printf("Escolha um desses tópicos para comparar.\n");
+    printf("1. Comparar pontos turísticos.\n");
+    printf("2. Compararar área.\n");
+    printf("3. Comparar população.\n");
+    printf("4. Comparar PIB.\n");
+    printf("5. Comparar densidade populacional.\n");
+    printf("6. Comparar PIB per capita.\n");
+    scanf("%d", &topicos);
+
+    {
     if(pontoscartaA > pontoscartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
-    
-    }else{
-        printf("Carta B (Bahia) venceu!\n");
-
     }
-    
-    printf("Digite o número da população da carta A: \n");
-    scanf("%d", &populacaocartaA);
-    printf("Digite o número da população da carta B: \n");
-    scanf("%d", &populacaocartaB);
-     
-    if(populacaocartaA > populacaocartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-
-    }else{
+    else if (pontoscartaA < pontoscartaB)
+    {
         printf("Carta B (Bahia) venceu!\n");
-
+    }
+    else{
+        printf("Empate!\n");
+    } break;
     }
 
-    printf("Digite quanto tem de área em km² a carta A: \n");
-    scanf("%f", &areacartaA);
-    printf("Digite quanto tem de área em km² a carta B: \n");
-    scanf("%f", &areacartaB);
-
+    case 2:
+    {
     if(areacartaA > areacartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
-
-    }else{
+    }
+    else if(areacartaA < areacartaB){
         printf("Carta B (Bahia) venceu!\n");
-
+    }
+    else{
+        printf("Empate!\n");
+    } break;
+    
     }
 
-    printf("Digite o número do PIB da carta A: \n");
-    scanf("%f", &pibcartaA);
-    printf("Digite o número do PIB da carta B: \n");
-    scanf("%f", &pibcartaB);
+    case 3:
+    {
+    if(populacaocartaA > populacaocartaB){
+        printf("Carta A (Rio de Janeiro) venceu!\n");
+    }
+    else if(populacaocartaA < pontoscartaB){
+        printf("Carta B (Bahia) venceu!\n");
+    }
+    else{
+        printf("Empate!\n");
+    } break;
     
+    }
+
+    case 4:
+    {
     if(pibcartaA > pibcartaB){
         printf("Carta A (Rio de Janeiro) venceu!\n");
-
-    }else{
+    }
+    else if(pibcartaA < pibcartaB){
         printf("Carta B (Bahia) venceu!\n");
+    }
+    else{
+        printf("Empate!\n");
+    } break;
 
     }
+
+    case 5:
+    {
+    if(densidadecartaA < densidadecartaB){
+        printf("Carta A (Rio de Janeiro) venceu!\n", (populacaocartaA / areacartaA));
+    }
+    else if(densidadecartaA > densidadecartaB){
+        printf("Carta B (Bahia) venceu!\n", (densidadecartaB / areacartaB));
+    }
+    else{
+        printf("Empate!\n");
+    }    break;
+
+    }
+
+    case 6:
+    {
+    if(pibcapitacartaA > pibcapitacartaB){
+        printf("Carta A (Rio de Janeiro) venceu!\n", (pibcartaA / populacaocartaA));
+    }
+    else if(pibcapitacartaA < pibcapitacartaB)
+    {
+    printf("Carta B (Bahia) venceu!\n", (pibcartaB / populacaocartaB));    
+    }
+    else{
+        printf("Empate!\n");
+    }       break;
+
+    }
+
+    default:
+        printf("Opção inválida.\n");
+    break;
+
+}
+
+switch (cidades)
+{
+case 1:
+    printf("Cidade A - Rio de Janeiro\n", cidadecartaA);
+break;
+
+case 2:
+    printf("Cidade A - Bahia\n", cidadecartaB);
+break;
+
+default:
+    printf("Opção inválida!\n");
+break;
+}
+return 0;
 
     //densidadecartaA = populacaocartaA / areacartaA;
     //densidadecartaB = populacaocartaB / areacartaB;
@@ -101,29 +161,5 @@ int main() {
     //pibcapitacartaA = populacaocartaA / pibcartaA;
     //pibcapitacartaB = populacaocartaB / pibcartaB;
 
-    printf("Densidade populacional da carta A é: %.2f hab/km²\n", (populacaocartaA / areacartaA));
-    printf("Densidade populacional da carta B é: %.2f hab/km²\n", (populacaocartaB / areacartaB));
-
-    if(densidadecartaA > densidadecartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-
-    }else{
-        printf("Carta B (Bahia) venceu!\n");
-
-    }
-
-    printf("PIB per capita da carta A: %.2f reais\n", (populacaocartaA / pibcartaA));
-    printf("PIB per capita da carta B: %.2f reais\n", (populacaocartaB / pibcartaB));
-
-    if(pibcapitacartaA > pibcapitacartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-
-    }else{
-        printf("Carta B (Bahia) venceu!\n");
-
-    }
-
-
-return 0;
 
 }
