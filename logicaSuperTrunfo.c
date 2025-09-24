@@ -1,165 +1,158 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include<time.h>
 
-int main() {
-   
-    int topicos;
-    int comparacao;
-    int cidades;
+int main(){
 
-    int pontoscartaA = 50;
-    int pontoscartaB = 60;
-
-    int populacaocartaA = 300000;
-    int populacaocartaB = 500000;
-
-    float areacartaA = 5.000000;
-    float areacartaB = 3.900000;
-
-    float pibcartaA = 5.0000000;
-    float pibcartaB = 3.9000000;
-
-    char estadocartaA [50] = "Rio";
-    char estadocartaB [50] = "Bahia";
-
-    char cidadecartaA [60] = "Rio de Janeiro";
-    char cidadecartaB [60] = "Bahia";
-
-    char codigocartaA [30] = "R01";
-    char codigocartaB [30] = "B01";
-
-    float densidadecartaA, densidadecartaB;
-    float pibcapitacartaA, pibcapitacartaB;
+    int resultado1, resultado2;
+    char primeiroAtributo, segundoAtributo, Rio, Amazonas;
     
-    printf("***Comparação da Carta A e Carta B***\n");
+    int pontosturisticosA, pontosturisticosB;
+    int populacaoA, populacaoB;
 
-    printf("1.Comparação.\n");
-    printf("2.Verificar nome das cidades.\n");
-    scanf("%d", &comparacao, &cidades);
+    float areacartaA, areacartaB;
+    float pibcartaA, pibcartaB;
+    //float densidadecartaA, densidadecartaB;
+    //float pibcapitaA, pibcapitaB;
+    //Densidade populacional = (populacao/ area) quem obtiver menos ganha
+    //PIB per capita = (populacao / pib) que obtiver mais ganha
 
-    switch (comparacao)
-    {
-    case 1:
+    srand(time(0));
+    pontosturisticosA = 1;//rand() % 100 + 1;
+    pontosturisticosB = 0;//rand() % 100 + 1;
+    populacaoA = 1;//rand() % 100 + 1;
+    populacaoB = 0;//rand() % 100 + 1;
+    areacartaA = 0;//rand() % 100 + 1;
+    areacartaB = 1;//rand() % 100 + 1;
+
+    printf("Bem-vindo ao jogo!\n");
+    printf("Escolha o primeiro atributo!\n");
+    printf("P. Pontos turísticos\n");
+    printf("U. População\n");
+    printf("A. Área\n");
+    printf("I. PIB\n");
+    printf("C. Cidades\n");
+    //printf("D. Densidade demográfica\n");
+    //printf("B. PIB per capita\n");
     
-    printf("Escolha um desses tópicos para comparar.\n");
-    printf("1. Comparar pontos turísticos.\n");
-    printf("2. Compararar área.\n");
-    printf("3. Comparar população.\n");
-    printf("4. Comparar PIB.\n");
-    printf("5. Comparar densidade populacional.\n");
-    printf("6. Comparar PIB per capita.\n");
-    scanf("%d", &topicos);
+    printf("Escolha a comparação: \n");
+    scanf("%c", &primeiroAtributo);
 
+    switch (primeiroAtributo)
     {
-    if(pontoscartaA > pontoscartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-    }
-    else if (pontoscartaA < pontoscartaB)
-    {
-        printf("Carta B (Bahia) venceu!\n");
-    }
-    else{
-        printf("Empate!\n");
-    } break;
-    }
+    case 'P':
+    case 'p':
+        printf("Você escolheu Pontos Turísticos!\n");
+        resultado1 = pontosturisticosA > pontosturisticosB ? 1 : 0;
+        break;
 
-    case 2:
-    {
-    if(areacartaA > areacartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-    }
-    else if(areacartaA < areacartaB){
-        printf("Carta B (Bahia) venceu!\n");
-    }
-    else{
-        printf("Empate!\n");
-    } break;
-    
-    }
+    case 'U':
+    case 'u':
+        printf("Você escolheu População!\n");
+        resultado1 = populacaoA > populacaoB ? 1 : 0;
+        break;
 
-    case 3:
-    {
-    if(populacaocartaA > populacaocartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-    }
-    else if(populacaocartaA < pontoscartaB){
-        printf("Carta B (Bahia) venceu!\n");
-    }
-    else{
-        printf("Empate!\n");
-    } break;
-    
-    }
+    case 'A':
+    case 'a':
+        printf("Você escolheu Área!\n");
+        resultado1 = areacartaA > areacartaB ? 1 : 0;
+        break;
 
-    case 4:
-    {
-    if(pibcartaA > pibcartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n");
-    }
-    else if(pibcartaA < pibcartaB){
-        printf("Carta B (Bahia) venceu!\n");
-    }
-    else{
-        printf("Empate!\n");
-    } break;
+    case 'I':
+    case 'i':
+        printf("Você escolheu PIB!\n");
+        resultado1 = pibcartaA > pibcartaB ? 1 : 0;
+        break;
 
-    }
+    case 'C':
+    case 'c':
+        printf("Você escolheu Cidades: %d\n", Rio, Amazonas);
+        break;
 
-    case 5:
-    {
-    if(densidadecartaA < densidadecartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n", (populacaocartaA / areacartaA));
-    }
-    else if(densidadecartaA > densidadecartaB){
-        printf("Carta B (Bahia) venceu!\n", (densidadecartaB / areacartaB));
-    }
-    else{
-        printf("Empate!\n");
-    }    break;
+    //case 'D':
+    //case 'd':
+      //  break;
 
-    }
-
-    case 6:
-    {
-    if(pibcapitacartaA > pibcapitacartaB){
-        printf("Carta A (Rio de Janeiro) venceu!\n", (pibcartaA / populacaocartaA));
-    }
-    else if(pibcapitacartaA < pibcapitacartaB)
-    {
-    printf("Carta B (Bahia) venceu!\n", (pibcartaB / populacaocartaB));    
-    }
-    else{
-        printf("Empate!\n");
-    }       break;
-
-    }
+    //case 'B':
+    //case 'b':
+      //  break;
 
     default:
-        printf("Opção inválida.\n");
-    break;
+        printf("Opção inválida!\n");
+        break;
+    }
 
-}
+    printf("Escolha o segundo atributo!\n");
+    printf("Atenção!!! Escolha um novo atributo.\n");
+    printf("P. Pontos turísticos\n");
+    printf("U. População\n");
+    printf("A. Área\n");
+    printf("I. PIB\n");
+    printf("C. Cidades\n");
+    //printf("D. Densidade demográfica\n");
+    //printf("B. PIB per capita\n");
 
-switch (cidades)
-{
-case 1:
-    printf("Cidade A - Rio de Janeiro\n", cidadecartaA);
-break;
+    printf("Escolha a comparação: \n");
+    scanf("%c", &segundoAtributo);
 
-case 2:
-    printf("Cidade A - Bahia\n", cidadecartaB);
-break;
+    if (primeiroAtributo == segundoAtributo)
+    {
+    printf("Os atributos são os mesmos.\n");
+    }
+    else{
+        switch (segundoAtributo)
+        {
+        case 'P':
+        case 'p':
+        printf("Você escolheu Pontos Turísticos!\n");
+        resultado2 = pontosturisticosA > pontosturisticosB ? 1 : 0;
+        break;
 
-default:
-    printf("Opção inválida!\n");
-break;
-}
-return 0;
+        case 'U':
+        case 'u':
+        printf("Você escolheu População!\n");
+        resultado2 = populacaoA > populacaoB ? 1 : 0;
+        break;
 
-    //densidadecartaA = populacaocartaA / areacartaA;
-    //densidadecartaB = populacaocartaB / areacartaB;
+        case 'A':
+        case 'a':
+        printf("Você escolheu Área!\n");
+        resultado2 = areacartaA > areacartaB ? 1 : 0;
+        break;
 
-    //pibcapitacartaA = populacaocartaA / pibcartaA;
-    //pibcapitacartaB = populacaocartaB / pibcartaB;
+        case 'I':
+        case 'i':
+        printf("Você escolheu PIB!\n");
+        resultado2 = pibcartaA > pibcartaB ? 1 : 0;
+        break;
 
+        case 'C':
+        case 'c':
+        printf("Você escolheu Cidades: %d\n", Rio, Amazonas);
+        break;
 
+        //case 'D':
+        //case 'd':
+        //  break;
+
+        //case 'B':
+        //case 'b':
+        //  break;
+
+        default:
+        printf("Opção inválida!\n");
+        break;
+        }
+
+        if (resultado1 && resultado2)//se for verdadeiro, ele vence
+        {
+        printf("Parabéns, você ganhou!\n");
+        }
+        else if(resultado1 != resultado2){
+        printf("Empate!\n");
+        }
+        else{
+        printf("Infelizmente você perdeu!\n");
+        }
+    }
 }
